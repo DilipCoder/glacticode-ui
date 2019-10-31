@@ -18,8 +18,28 @@ colors {
   background-repeat: no-repeat;
 } */
 
+.bg-image {
+  background-image: url('./imgs/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 a {
@@ -187,10 +207,10 @@ canvas {
   position: absolute;
   margin: auto;
   z-index: 100;
-  top: 100px;
+  top: 385px;
   right: 0;
   left: 0;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   padding: 30px;
@@ -505,3 +525,78 @@ progress::-webkit-progress-value {
 }
 
 /* END PLANET SELECT */
+
+@font-face {
+  font-family: '28_days_laterregular';
+  src: url('./fonts/28_days_later-webfont.woff2') format('woff2'),
+    url('./fonts/28_days_later-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'audiowideregular';
+  src: url('./fonts/audiowide-regular-webfont.woff2') format('woff2'),
+    url('./fonts/audiowide-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.header-div{
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  text-align: center;
+  justify-content: center;
+  top: 90px;
+}
+
+.header-text{
+  /* position: absolute; */ 
+  text-align: center;
+  font-family: 'audiowideregular';
+  font-size: 185px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  text-shadow: 0px 3px 6px #000000;
+  opacity: 0.9;
+}
+.div-text {
+ position: absolute;
+ bottom: 10%;
+ width: 100vw;
+ display: flex;
+ justify-content: center;
+}
+.home-text {
+  width: 550px;
+  height: 239px;
+  font-family: '28_days_laterregular';
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: 0;
+  color: #F9F9F9E6;
+  text-shadow: 0px 3px 6px #000000;
+  opacity: 1;
+}
+
+.login-form{
+  padding-top: 100px;
+  display: inline;
+  text-align: center;
+}
+
+input, input:focus{
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+}
+
+.login-form div {
+  padding-top:30px;
+}
+
+.error-text{
+  color: #fb8b0b;
+}

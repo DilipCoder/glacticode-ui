@@ -78,9 +78,10 @@ p {
 /* START NAVBAR */
 
 #navbar {
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 0;
   position: absolute;
   z-index: 100;
@@ -93,10 +94,10 @@ p {
   width: 250px;
 }
 
-nav a {
+/* nav a {
   display: inline-block;
   margin: 1em;
-}
+} */
 
 nav li {
   display: block;
@@ -190,6 +191,17 @@ canvas {
   left: 0;
   right: 0;
   bottom: 20px;
+}
+
+.btn-close-challenge-1{
+  width: 600px;
+  background: #43afee;
+  z-index: 100;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 100px;
 }
 
 .btn-planet-select {
@@ -365,7 +377,7 @@ canvas {
 
 .account-wrapper {
   position: absolute;
-  top: 100px;
+  bottom: 100px;
   left: 0;
   right: 0;
   margin: auto;
@@ -391,18 +403,26 @@ canvas {
 /* END USER ACCOUNT */
 
 /* START FUEL BAR */
-
+.progress span{
+  color: white;
+  font-family: '28_days_laterregular';
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 1.5;
+  margin-left: 10px;
+}
 progress {
+  margin-top: 40px;
   appearance: none;
-  background-color: #272822;
+  background-color: #5db453;
   border-radius: 30px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
-  width: 300px;
-  height: 30px;
+  width: 800px;
+  height: 50px;
 }
 
 progress::-webkit-progress-bar {
-  background-color: #272822;
+  background-color: #5db453;
   border-radius: 30px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
 }
@@ -465,21 +485,25 @@ progress::-webkit-progress-value {
   right: 0;
   margin: auto;
   z-index: 50;
-  display: grid;
+  display: block;
+  /* display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 10% 45% 45%;
   grid-template-areas: 'planet-header planet-header planet-header' 'planet1 planet2 planet3' 'planet4 planet5 planet6';
-  justify-items: center;
-  align-items: center;
+  justify-items: center; */
+  justify-content: center;
   text-align: center;
   padding: 30px 40px;
-  max-width: 1000px;
+  width: 1000px;
   height: 70vh;
   background-color: rgb(4, 5, 10, 0.8);
 }
 
 .planet-header {
-  grid-area: planet-header;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 #planet1 {
@@ -599,4 +623,28 @@ input, input:focus{
 
 .error-text{
   color: #fb8b0b;
+}
+
+/* main pages */
+
+.profile-image {
+  background-image: url('./imgs/profile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* position: absolute;
+  top: 0px;
+  right: 0px; */
+  width: 182px;
+  height: 147px;
+  opacity: 0.8;
+}
+
+.logo-text{
+  text-align: left;
+  font-family: 'audiowideregular';
+  font-size: 72px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  text-shadow: 0px 3px 6px #000000;
+  opacity: 0.9;
 }

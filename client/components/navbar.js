@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {FuelBar} from './index'
 import {logout} from '../store'
+import profileImg from '../../public/imgs/profile.png'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <nav>
@@ -11,25 +12,30 @@ const Navbar = ({handleClick, isLoggedIn}) => (
       <ul id="navbar">
         <li>
           <Link to="/">
-            <img id="nav-logo" src="/GALACTICODE-logo.png" />
+            <p className="logo-text">Glacticode</p>
           </Link>
         </li>
         <li>
           <FuelBar />
         </li>
-        <li className="dropdown">
+        <li>
+          <a href="/account">
+            <p className="profile-image"></p>
+          </a>
+        </li>
+        {/* <li className="dropdown">
           <Link to="/account">Account</Link>
           <ul className="dropdown-content">
-            {/* <li>
+            <li>
               <Link to="/tutorial">Tutorial</Link>
-            </li> */}
+            </li>
             <li>
               <a href="#" onClick={handleClick}>
                 Logout
               </a>
             </li>
           </ul>
-        </li>
+        </li> */}
       </ul>
     )}
   </nav>

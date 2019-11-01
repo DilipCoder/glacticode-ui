@@ -32,11 +32,14 @@ class Game extends Component {
     const { challenges } = this.props
     return (
       <div>
-        <div>{gamePlayEnvironment()}</div>
+        {!this.state.showList && <div>{gamePlayEnvironment()}</div> }
         {this.state.showList && (
           <ChallengeList challenges={challenges} toggleList={this.toggleList} />
         )}
         <div className="button-wrapper">
+          <button className = "btn btn-close-challenge-1" >
+          use the arrow key to move red ball for challenges 
+          </button>
           <button
             onClick={this.toggleList}
             className="btn btn-close-challenge"

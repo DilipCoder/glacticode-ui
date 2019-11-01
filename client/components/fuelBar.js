@@ -20,9 +20,9 @@ class FuelBar extends Component {
   render() {
     const {progress} = this.props
     return (
-      <div>
+      <div className="progress">
         <progress value={calculateProgress(progress)} max="100" />
-        <p>{calculateProgress(progress)}/100</p>
+        <span>{calculateProgress(progress)}/100</span>
         {calculateProgress(progress) === 100 && <Victory />}
       </div>
     )

@@ -5,7 +5,7 @@ import Routes from './routes'
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-image" id="bg">
       <Navbar />
       <Routes />
     </div>

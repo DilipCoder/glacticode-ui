@@ -22,6 +22,30 @@ const handleClick = () => {
 }
 
 class Home extends Component {
+  state = {
+    index: 1
+  }
+
+  prevBtn = () => {
+    console.log("prev")
+    let {index} = this.state
+    if(index <= 0){
+      return
+    } else {
+      let newIndex = index - 1
+      this.setState({index:newIndex})
+    }
+    this.props.planets.length
+  }
+  nextBtn = () => {
+    let {index} = this.state
+    if (index < this.props.planets.length - 1){
+      let newIndex = index + 1
+      this.setState({index:newIndex})
+    } else {
+      return
+    }
+  }
   componentDidMount() {
     this.props.fetchPlanets()
     this.props.fetchUnlockedPlanets(this.props.user.id)
@@ -44,45 +68,50 @@ class Home extends Component {
             }});
 
     console.log("home rendered");
-    return (
-      <div className="planet-select">
-        <div className="planet-header">
-          <h2>SELECT A PLANET</h2>
-          { images && <Coverflow
-          width={960}
-          height={480}
-          displayQuantityOfSide={2}
-          navigation={true}
-          enableHeading
-          // media={{
-          //   width:'800px',
-          //   height:'500px'
-          // }}
-          >
-            {images}
-          </Coverflow>}
+    return(
+      <div className="container-fluid" style={{marginTop:'200px'}}>
+      <div className="row">
+        <div className="col-md-6" style={{marginTop:'-150px'}}>
+          <img src={require('../../public/imgs/Astronout.png')} alt="astronouts" style={{height:'900px'}}/>
         </div>
-           {/* // return (
-            //   <div
-            //     className="planet-img"
-            //     id={`planet${planet.id}`}
-            //     key={planet.id}
-            //   >
-            //     {src !== '/Gray_Planet.png' ? (
-            //       <Link to={`/planet/${planet.id}`} onClick={handleClick()} >
-            //         <img src={`${src}`} width="150" height="150" />
-            //         <p>{planet.name}</p>
-            //       </Link>
-            //     ) : (
-            //         <div>
-            //           <img src={`${src}`} width="150" height="150" />
-            //           <p>{planet.name}</p>
-            //         </div>
-            //       )}
-            //   </div>
-    // ) */}
+        <div className="col-md-6" style={{alignItems:'center'}}>
+          <div className="planet-select">
+            <div className="planet-header">
+              <h2>SELECT A PLANET</h2>
+              <div className="button-select-group">
+                <img src={require('../../public/imgs/preview.png')} alt="preview" onClick={()=>this.prevBtn()}/>
+                <img src={require('../../public/imgs/next.png')} alt="preview" onClick={()=>this.nextBtn()}/>
+              </div>
+              { images && <Coverflow
+            width={960}
+            height={480}
+            displayQuantityOfSide={2}
+            active={this.state.index}
+            >
+                {images}
+              </Coverflow>}
+          </div>
+        </div>
+        </div>
+      </div>
       </div>
     )
+    // return (
+    //   <div className="planet-select">
+    //     <div className="planet-header">
+    //       <h2>SELECT A PLANET</h2>
+    //       { images && <Coverflow
+    //       width={960}
+    //       height={480}
+    //       displayQuantityOfSide={2}
+    //       navigation={true}
+    //       enableHeading
+    //       >
+    //         {images}
+    //       </Coverflow>}
+    //     </div>
+    //   </div>
+    // )
   }
 }
 

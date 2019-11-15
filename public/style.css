@@ -479,10 +479,10 @@ progress::-webkit-progress-value {
 /* START PLANET SELECT */
 
 .planet-select {
-  position: absolute;
+  /* position: absolute;
   top: 100px;
   left: 0;
-  right: 0;
+  right: 0; */
   margin: auto;
   z-index: 50;
   display: block;
@@ -494,8 +494,8 @@ progress::-webkit-progress-value {
   justify-content: center;
   text-align: center;
   padding: 30px 40px;
-  width: 1000px;
-  height: 70vh;
+  /* width: 1000px; */
+  /* height: 70vh; */
   background-color: rgb(4, 5, 10, 0.8);
 }
 
@@ -546,6 +546,12 @@ progress::-webkit-progress-value {
   background-color: #98d5f8;
   /* font-size: 150%; */
   transform: scale(1.1);
+}
+
+.button-select-group{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* END PLANET SELECT */

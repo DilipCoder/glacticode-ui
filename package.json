@@ -37,6 +37,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
+    "babel-plugin-transform-react-jsx-img-import": "^0.1.4",
     "brace": "^0.11.1",
     "compression": "^1.7.3",
     "connect-session-sequelize": "^4.1.0",
@@ -66,7 +67,8 @@
     "sinon": "^6.1.5",
     "sinon-chai": "^3.2.0",
     "socket.io": "^2.1.1",
-    "three": "^0.95.0"
+    "three": "^0.95.0",
+    "url-loader": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.55",
